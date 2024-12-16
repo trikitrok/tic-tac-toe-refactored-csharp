@@ -38,7 +38,7 @@ public abstract class Turn
 
     protected abstract Player GetOPlayer();
 
-    public bool ThereIsNext()
+    public bool CanBePlayed()
     {
         return !GetXPlayer().HasWon() && !IsBoardFull() && !GetOPlayer().HasWon();
     }
@@ -64,7 +64,7 @@ public abstract class Turn
         {
             return CreateWinningDto();
         }
-        if (ThereIsNext())
+        if (CanBePlayed())
         {
             return OnGoingDto();
         }

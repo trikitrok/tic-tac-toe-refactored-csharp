@@ -17,7 +17,9 @@ public class Game
 
     private void StartTurns()
     {
-        while (_turn.ThereIsNext())
+        while (_turn.CanBePlayed())
+        {
             _turn = _turn.Play();
+        }
     }
 }
