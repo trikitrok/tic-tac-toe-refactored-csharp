@@ -1,5 +1,11 @@
 namespace TicTacToe;
 
+internal enum Turn
+{
+    X,
+    O
+}
+
 public class Game
 {
     private Turn _turn;
@@ -58,11 +64,11 @@ public class Game
         var playerXFields = _playerX.ToDto();
         var playerOFields = _playerO.ToDto();
 
-        if (_playerX.HasWon()) 
+        if (_playerX.HasWon())
             return GameStateDto.WinningX(playerXFields, playerOFields);
-        if (IsBoardFull()) 
+        if (IsBoardFull())
             return GameStateDto.NoWinner(playerXFields, playerOFields);
-        if (_playerO.HasWon()) 
+        if (_playerO.HasWon())
             return GameStateDto.WinningO(playerXFields, playerOFields);
         return GameStateDto.OnGoingGame(playerXFields, playerOFields);
     }
