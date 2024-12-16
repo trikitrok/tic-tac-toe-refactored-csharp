@@ -1,4 +1,4 @@
-# Legacy Tic Tac Toe
+# Legacy Tic Tac Toe after splitting up large class
 
 ## Install dependencies and tools
 
